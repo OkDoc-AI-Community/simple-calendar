@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "release": "node scripts/release.mjs",
+    "release:push": "git push origin HEAD --tags"
   },
   "dependencies": {
     "@angular/common": "^21.1.0",

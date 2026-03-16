@@ -5,10 +5,15 @@
     "@angular/common": ">=20.0.0",
     "@angular/core": ">=20.0.0",
     "@ionic/angular": "^8.0.0",
-    "@okdoc-ai/plugin-sdk": ">=1.0.0"
+    "@okdoc-ai/plugin-sdk": ">=1.0.0",
+    "ionicons": "^7.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OkDoc-AI-Community/simple-calendar.git"
   },
   "sideEffects": false
 }
