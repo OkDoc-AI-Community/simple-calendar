@@ -1,0 +1,14 @@
+{
+  "name": "@okdoc-ai-community/simple-calendar",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0",
+    "@ionic/angular": "^8.0.0",
+    "@okdoc-ai/plugin-sdk": ">=1.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,38 @@
+<div class="calendar-container">
+    <div class="calendar-header">
+        <ion-select [value]="selectedMonth()" (ionChange)="onMonthChange($event)">
+            @for (month of months; track month.value) {
+            <ion-select-option [value]="month.value">{{ month.label }}</ion-select-option>
+            }
+        </ion-select>
+
+        <ion-select [value]="selectedYear()" (ionChange)="onYearChange($event)">
+            @for (year of years; track year) {
+            <ion-select-option [value]="year">{{ year }}</ion-select-option>
+            }
+        </ion-select>
+    </div>
+
+    <div class="calendar-grid">
+        <div class="calendar-weekdays">
+            @for (day of weekDays; track day) {
+            <div class="weekday">{{ day }}</div>
+            }
+        </div>
+
+        <div class="calendar-days">
+            @for (day of calendarDays(); track $index) {
+            <button class="day-cell" [class.other-month]="!day.isCurrentMonth" [class.selected]="isSelected(day.date)"
+                [disabled]="!day.date" (click)="selectDate(day.date!)">
+                {{ day.day || '' }}
+            </button>
+            }
+        </div>
+    </div>
+
+    @if (selectedDate()) {
+    <div class="selected-date-display">
+        Selected: {{ formatDate(selectedDate()!) }}
+    </div>
+    }
+</div>
