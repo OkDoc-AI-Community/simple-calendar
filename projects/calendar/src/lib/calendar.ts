@@ -31,7 +31,7 @@ export class OdcSimpleCalendar {
 
   selectedMonth = signal(new Date().getMonth());
   selectedYear = signal(new Date().getFullYear());
-  selectedDate = signal<Date | null>(null);
+  selectedDate = signal<Date | null>(new Date());
 
   months = [
     { value: 0, label: 'January' },
