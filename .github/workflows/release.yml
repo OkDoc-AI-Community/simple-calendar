@@ -55,7 +55,20 @@ jobs:
         with:
           generate_release_notes: true
 
+      # Everything up to here runs was on Node 22
+      # Now switch to Node 24 for the publish step to get the latest npm CLI with improved provenance support
+      # Note: This is needed to push to npmjs with Trusted Publishing option (which requires npm >22)
+      # TODO: After upgrading fully to Node 24, you can remove these steps of switch and install
+
+      - name: Switch to Node 24 for publish (newer npm CLI)
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Update npm to ensure latest (optional safety net)
+        run: npm install -g npm@latest
+
       - name: Publish to npm
         run: npm publish ${{ steps.lib.outputs.dist }}/ --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
