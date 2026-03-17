@@ -11,12 +11,13 @@ interface CalendarDay {
 }
 
 @OkDocPlugin({
-  id: 'odc-okdoc-simple-calendar',
+  id: 'okdoc-simple-calendar',
   name: 'Simple Calendar',
   description: 'A simple calendar component for selecting dates',
   version: '0.0.1',
   icon: 'calendar-outline',
-  namespace: 'odc-okdoc-simple-calendar',
+  namespace: 'simple_calendar',
+  author: { name: 'OkDoc AI Community', url: 'https://github.com/OkDoc-AI-Community' },
 })
 @Component({
   selector: 'odc-simple-calendar',
